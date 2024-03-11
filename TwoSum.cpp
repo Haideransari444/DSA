@@ -26,33 +26,24 @@ Output: [0,1]
 
 
 
+#pragma once 
 #include <iostream>
+#include <vector>
 using namespace std; 
-int main(){ 
-int length; 
-cout<<"Enter The length Of the Array"; 
-cin>>length;
-int array[length]; 
-for(int i = 0; i<length;i++){ 
-cin>>array[i];
-}
-int target; 
-cout<<"enter the target: ";
-cin>>target;
-int result=1;
-	for(int i = 0; i<length; i++){ 
-		for (int j=0; j<length; j++){ 
-			if(array[i]+array[j]==target){ 
-			cout<<"["<<i<<","<<j<<"]";
-			
-		}						
-}
-			array[i]=0;
-			result = 2;
-}
-	 
-	 if (result != 2){ 
-	 cout<<"not Found!!!";
-	 }
+class Solution{ 
+    public:
+    vector<int> twoSum (vector<int>& nums, int target) {
+        vector<int>result;
+        for (int i=0;i<nums.size();i++){ 
+            for (int j=0;j<nums.size();j++){ 
+                if (nums[i]+nums[j] == target && i != j){
+                    result =  {i,j};
+            }
+        }
+
+    }
+    return result;
 
 }
+
+};
